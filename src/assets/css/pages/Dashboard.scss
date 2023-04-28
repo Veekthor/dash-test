@@ -1,0 +1,153 @@
+.sales-overview {
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  .sales-cards-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sales-card {
+    width: 256px;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 25px;
+
+    .card-title {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .sales-amount {
+      padding: 5px 0;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    &:hover,
+    &.active {
+      background-color: black;
+      color: white;
+    }
+
+    .chart {
+      width: 100%;
+    }
+  }
+}
+
+.sales-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 2rem;
+
+  .sales-graph-container {
+    width: 70%;
+    margin-top: 50px;
+
+    .sales-graph-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.1rem;
+
+      .divider {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        height: 24px;
+        width: 0px;
+      }
+
+      h2 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: rgb(10, 10, 10);
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .usd-option {
+        padding: 10px;
+        border-radius: 8px;
+        outline: none;
+        border: 1px solid;
+        background: none;
+      }
+
+      .email-option {
+        width: 400px;
+        padding: 10px;
+        border: 1px solid #ededed;
+        border-radius: 8px;
+        background: none;
+        outline: none;
+      }
+
+      .download-btn {
+        padding: 15px 10px;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 12px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+
+    .sales-graph {
+      padding: 1rem;
+      border: 1px solid #0a0a0a;
+      border-radius: 8px;
+    }
+  }
+
+  &> :nth-child(2) {
+    color: white;
+    background-color: var(--klasha-pink);
+    padding: 24px;
+    border-radius: 8px;
+    width: 30%;
+    height: 284px;
+    position: relative;
+    margin-top: 6.3rem;
+
+    .klasha-card {
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      height: 100%;
+      z-index: 1;
+      position: relative;
+
+      .klasha-btn {
+        background: black;
+        padding: 12.5px 24px;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+
+    img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500&display=swap');
+
+:root {
+  --black-400: #8D8D8D;
+  --klasha-pink: #EF2C5A;
+  --klasha-white: #FFFBF7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #1a1a1a;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.theme-color {
+  color: var(--klasha-pink) !important;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+.App-layout {
+  display: flex;
+
+  @media screen and (max-width: 884px) {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .page {
+    width: 100%;
+    height: calc(100vh - 1rem);
+    overflow: scroll;
+
+    .top-bar {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 23px 38px 23px 0px;
+      transition: all 0.2s ease-in-out 0s;
+      border-bottom: 1px solid #EDEDED;
+
+      &>div {
+        width: max-content;
+        gap: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+
+        .app-user {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+
+          .user-img {
+            width: 27px;
+            height: 27px;
+          }
+
+          .dropdown-icon {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+    }
+
+    .container {
+      padding: 100px 32px 0;
+    }
+  }
+}

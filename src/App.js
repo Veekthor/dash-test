@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/css/App.scss';
+import SidePanel from './components/SidePanel';
+import DashboardPage from './pages/Dashboard';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TransactionPage from './pages/TransactionPage';
+import TopNavBar from './components/TopNavBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App-layout">
+        <SidePanel />
+        <div className='page'>
+          <TopNavBar />
+          <div className='container'>
+            <Routes>
+              <Route path="/" element={<DashboardPage />} />
+              <Route path="/transaction" element={<TransactionPage />} />
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </Router>
   );
 }
 
