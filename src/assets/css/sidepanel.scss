@@ -7,73 +7,82 @@
   position: relative;
   overflow-y: auto;
 
-  nav {
-    margin-top: 53px;
+  @media screen and (max-width: 884px) {
+    display: none !important;
+  }
 
-    span {
-      color: var(--black-400);
-    }
 
-    .nav-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 19px 0 35px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
-      li {
+nav.side-panel-nav {
+  margin-top: 53px;
+
+  span {
+    color: var(--black-400);
+  }
+
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 19px 0 35px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 0.7rem 1rem;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19px;
+      text-align: left;
+      color: rgb(10, 10, 10);
+      transition: all 0.3s ease-in-out 0s;
+
+      a,
+      span {
+        text-decoration: none;
         display: flex;
         align-items: center;
+        width: 100%;
         gap: 11px;
-        padding: 0.7rem 1rem;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 19px;
-        text-align: left;
-        color: rgb(10, 10, 10);
-        transition: all 0.3s ease-in-out 0s;
+        color: inherit;
+      }
 
-        a,
-        span {
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          width: 100%;
-          gap: 11px;
-          color: inherit;
-        }
+      &:hover,
+      &.active {
+        color: var(--klasha-pink);
+        cursor: pointer;
+      }
 
-        &:hover,
-        &.active {
-          color: var(--klasha-pink);
-          cursor: pointer;
-        }
-
-        &.active {
-          font-weight: 600;
-        }
+      &.active {
+        font-weight: 600;
       }
     }
   }
+}
 
-  .bottom-btn {
-    margin-top: 100px;
+.bottom-btn {
+  margin-top: 100px;
 
-    button {
-      display: block;
-      padding: 12px 20px;
-      display: flex;
-      gap: 11px;
+  button {
+    display: block;
+    padding: 12px 20px;
+    display: flex;
+    gap: 11px;
 
-      &.support-btn {
-        margin-bottom: 14px;
-        background-color: var(--klasha-pink);
-        border-radius: 20px;
-        color: white;
-      }
+    &.support-btn {
+      margin-bottom: 14px;
+      background-color: var(--klasha-pink);
+      border-radius: 20px;
+      color: white;
+    }
 
-      &.hide-panel {
-        border: 1px solid black;
-        border-radius: 8px;
-      }
+    &.hide-panel {
+      border: 1px solid black;
+      border-radius: 8px;
     }
   }
 }

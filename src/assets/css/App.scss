@@ -9,6 +9,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -44,10 +45,69 @@ input[type="reset"] {
     width: 100%;
   }
 
+  .mobile-navbar-view {
+    z-index: 999;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #fffbf7;
+    top: 0;
+    padding: 1.6em;
+    color: black !important;
+    transition: transform 0.3s ease-in-out;
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      padding: 1em;
+    }
+
+    .mobile-close-header {
+      cursor: pointer;
+      font-size: 30px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      color: #ef2c5a;
+      transition: color 0.3s ease-in-out;
+
+      @media (min-width: 768px) and (max-width: 1114px) {
+        width: 35%;
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+      width: 80%;
+    }
+
+    &:hover {
+      color: #a0aec0;
+    }
+
+    .mobile-nav {
+      height: 100vh;
+      overflow-y: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .mobile-nav::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   .page {
     width: 100%;
     height: calc(100vh - 1rem);
     overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (max-width: 884px) {
+      width: 100%;
+    }
 
     .top-bar {
       display: flex;
@@ -57,6 +117,19 @@ input[type="reset"] {
       transition: all 0.2s ease-in-out 0s;
       border-bottom: 1px solid #EDEDED;
 
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @media (min-width: 320px) and (max-width: 767px) {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      @media screen and (max-width: 884px) {
+        margin-bottom: 1rem;
+      }
+
       &>div {
         width: max-content;
         gap: 22px;
@@ -64,6 +137,10 @@ input[type="reset"] {
         align-items: center;
         justify-content: flex-end;
         position: relative;
+
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
 
         .app-user {
           display: flex;
@@ -86,6 +163,80 @@ input[type="reset"] {
 
     .container {
       padding: 100px 32px 0;
+      
+      @media (min-width: 320px) and (max-width: 1280px) {
+        padding: 10px;
+      }
+    }
+  }
+
+  /* OVERLAY */
+
+  .overlay {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0 0 0 / 50%);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+
+    &.overlay-active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
+    }
+  }
+
+  .right {
+    transform: translateX(120%);
+    transition: transform 300ms ease-out;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+
+  @media (min-width: 768px) and (max-width: 1114px) {
+    .left {
+      transform: translateX(60%);
+      transition: transform 300ms ease-out;
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    .left {
+      transform: translateX(30%);
+      transition: transform 300ms ease-out;
+    }
+  }
+
+  .mobile-top-navBar {
+    display: none;
+
+    img {
+      width: 83px;
+      height: 24px;
+    }
+
+    .uil-bars {
+      cursor: pointer;
+      font-size: 30px;
+    }
+
+    @media screen and (max-width: 884px) {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      box-shadow: 0px 5px 20px 0px #0000000a;
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 150;
+      background-color: white;
     }
   }
 }
