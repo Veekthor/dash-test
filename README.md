@@ -1,4 +1,4 @@
-# Klasha Dashboard and Transaction Page
+# Simple Admin Dashboard and Transaction Page
 
 This is a responsive pixel-perfect app of a dashboard and transaction page built with ReactJS and SCSS.
 
@@ -20,7 +20,7 @@ To run the project locally, follow these steps:
 4. Open your browser and navigate to `http://localhost:3000` to view the application.
 
 ## Live Demo
-You can view a live demo [here](https://klasha-dash-test.netlify.app/)
+You can view a live demo [here](https://admin-dash-demo.netlify.app/)
 
 ## Contributing
 
